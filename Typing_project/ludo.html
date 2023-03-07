@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>LUDO GAME</title>
+	<link rel="stylesheet" type="text/css" href="D:\AKSHIT pics & vids\projecthtml\Typing_project\ludo.css">
+</head>
+<body>
+	<div class="maindiv">
+		<h1>ludo game</h1>
+		<div class="player">
+			<p>player1</p>
+			<img src="images\dice1.png" width="300px" id="pdice1">
+		</div>
+		<div class="player">
+			<p>player2</p>
+			<img src="images\dice1.png" width="300px" id="pdice2">
+		</div>
+		<div id="btn">
+			<button id="text" onclick="ludo()">click me</button>
+		</div>
+	</div>
+<script type="text/javascript">
+	ludo = ()=>
+	{
+		const play1=Math.floor(Math.random()*6)+1;
+		const playdice1=`images/dice${play1}.png`;
+		document.getElementById('pdice1').setAttribute('src',playdice1);
+
+		const play2=Math.floor(Math.random()*6)+1;
+		const playdice2=`images/dice${play2}.png`;
+		document.getElementById('pdice2').setAttribute('src',playdice2);
+
+		if(play1>play2)
+		{
+			document.querySelector('h1').innerHTML="Player 1 won ;)";
+		}
+		else if(play2>play1)
+		{
+			document.querySelector('h1').innerHTML="Player 2 won ;)";
+		}
+		else
+		{
+			document.querySelector('h1').innerHTML="Its a Draw ;)";
+		}
+	}
+</script>
+</body>
+</html>
